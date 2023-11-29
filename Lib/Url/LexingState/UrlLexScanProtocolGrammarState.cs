@@ -14,7 +14,7 @@
             else
             {
                 // Transition to domain parse state
-                TransitionState(new UrlLexEndState());
+                TransitionState(new UrlLexScanHostState());
                 return new LexingScanResult { Consumed = false };
             }
         }

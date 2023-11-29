@@ -29,7 +29,17 @@ namespace ManagedWebCrawler.Lib.Url
 
             while (true)
             {
-                string nextChar = char.ConvertFromUtf32(Reader.Peek());
+                int nextValue = Reader.Peek();
+                string nextChar;
+                if (nextValue == -1)
+                {
+                    nextChar = "";
+                }
+                else
+                {
+                    nextChar = char.ConvertFromUtf32(nextValue);
+                }
+                 
                 var result = CurrentLexingState.Scan(nextChar);
                 if (result.Consumed)
                 {
