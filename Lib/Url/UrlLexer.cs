@@ -1,5 +1,17 @@
 ﻿using ManagedWebCrawler.Lib.Url.LexingState;
 
+/*
+
+https://bob:bobby@www.lunatech.com:8080/file;p=1?q=2#third
+\___/   \_/ \___/ \______________/ \__/\_______/ \_/ \___/
+  |      |    |          |          |      | \_/  |    |
+Scheme User Password    Host       Port  Path |   | Fragment
+        \_____________________________/       | Query
+                       |               Path parameter
+                   Authority
+
+ */
+
 namespace ManagedWebCrawler.Lib.Url
 {
     public class UrlLexer : Lexer, ITextLexer
